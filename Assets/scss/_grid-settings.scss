@@ -1,0 +1,24 @@
+@import "neat-helpers";
+
+$visual-grid: true !default;
+$visual-grid-color: #ff0000 !default;
+$visual-grid-index: front !default; //front - back
+$visual-grid-opacity: 0.4 !default;
+
+
+// Change the grid settings
+$column: 80px;
+$gutter: 20px;
+$grid-columns: 12;
+$max-width: em(1200);
+$visual-grid: true;
+$border-box-sizing: true !default;
+
+// Define your breakpoints
+$small: new-breakpoint(min-device-width 320px max-device-width 640px 4);
+$small-land: new-breakpoint(min-device-width 320px max-device-width 640px orientation landscape 6);
+
+$medium: new-breakpoint(min-device-width 641px max-device-width 1024px);
+$medium-land: new-breakpoint(min-device-width 641px max-device-width 1024px orientation landscape);
+
+$large: new-breakpoint(min-width 1025px);

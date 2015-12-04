@@ -1,0 +1,34 @@
+{
+  "name": "webSetup",
+  "authors": " Lidia Freitas <lydiaoliveira@gmail.com>",
+  "version": "1.0.0",
+  "description": "A default structure to set up your web projects",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.0",
+    "modernizr": "~2.8.3",
+    "selectivizr": "~1.0.2",
+    "ie7-js": "*",
+    "requirejs": "~2.1.22",
+    "normalize-scss": "~3.0.3",
+    "owl.carousel": "owl-carousel2#~2.0.0-beta.3",
+    "fancyBox": "~2.1.5",
+    "jbox": "~0.3.2"  
+  },
+  "devDependencies": {
+    "bourbon": "~4.2.1",
+    "neat": "~1.7.2"
+  },
+  "install": {
+    "path": "Assets/js/vendor",
+    "sources": {}
+  }
+}
