@@ -17,18 +17,19 @@
     "modernizr": "~2.8.3",
     "selectivizr": "~1.0.2",
     "ie7-js": "*",
-    "requirejs": "~2.1.22",
-    "normalize-scss": "~3.0.3",
-    "owl.carousel": "owl-carousel2#~2.0.0-beta.3",
-    "fancyBox": "~2.1.5",
-    "jbox": "~0.3.2"  
+    "normalize-scss": "~3.0.3" 
   },
   "devDependencies": {
     "bourbon": "~4.2.1",
     "neat": "~1.7.2"
   },
   "install": {
-    "path": "Assets/js/vendor",
-    "sources": {}
+    "path": "Assets/vendor",
+    "sources": {
+        "ie7-js" : "bower_components/ie7-js/src/ie9-css.js",
+        "modernizr" : "bower_components/modernizr/modernizr.js",
+        "selectivizr" : "bower_components/selectivizr/selectivizr.js"
+    },
+    "ignore": ["bourbon", "neat", "normalize-scss"]
   }
 }

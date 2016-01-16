@@ -54,18 +54,26 @@ module.exports = function (grunt) {
             installDependencies: {
                 command: 'bower install',
                 stdout: true
-            }
-        },
-
-        bowerRequirejs: {
-            target: {
-                rjsConfig: 'Assets/js/common.js'
+            },
+            copyDependencies: {
+                command: 'bower-installer',
+                stdout: true
             }
         },
 
         wiredep: {
             task: {
                 src: ['<%= config.app %>*.html']
+            }
+        },
+        replace: {
+            task:{
+                src: ['<%= config.app %>*.html'],
+                overwrite: true,
+                replacements: [{
+                    from: 'bower_components/',
+                    to: "Assets/vendor/"
+                }]
             }
         },
 
@@ -77,9 +85,9 @@ module.exports = function (grunt) {
                     style: 'expanded',
                     lineNumbers: true,
                     includePaths: [
-                        'Assets/js/vendor/bourbon/app/assets/stylesheets/',
-                        'Assets/js/vendor/neat/app/assets/stylesheets/',
-                        'Assets/js/vendor/normalize-scss/'
+                        'bower_components/bourbon/app/assets/stylesheets/',
+                        'bower_components/neat/app/assets/stylesheets/',
+                        'bower_components/normalize-scss/'
                     ],
                 },
                 files: [{
@@ -96,7 +104,7 @@ module.exports = function (grunt) {
             options: {
                 jshintrc: '.jshintrc',
                 reporter: require('jshint-stylish'),
-                ignores: ['Assets/js/vendor/**/*.js']
+                ignores: ['Assets/vendor/**/*.js']
             },
             all: [
                 'Gruntfile.js',
@@ -127,6 +135,6 @@ module.exports = function (grunt) {
 
 
     // ================ Grunt Register Tasks ==============//
-    grunt.registerTask('wireUp', ['exec:installDependencies', 'bowerRequirejs', 'wiredep']);
+    grunt.registerTask('wireUp', ['exec:installDependencies', 'exec:copyDependencies', 'wiredep', 'replace']);
     grunt.registerTask('default', ['connect', 'watch']);
 };
