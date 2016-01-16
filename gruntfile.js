@@ -76,7 +76,7 @@ module.exports = function (grunt) {
                     trace: true,
                     style: 'expanded',
                     lineNumbers: true,
-                    loadPath: [
+                    includePaths: [
                         'Assets/js/vendor/bourbon/app/assets/stylesheets/',
                         'Assets/js/vendor/neat/app/assets/stylesheets/',
                         'Assets/js/vendor/normalize-scss/'
